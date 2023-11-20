@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <title>TopRecipe</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+<!--    <div class="content">-->
+<!--        {% block content %}{% endblock %}-->
+<!--    </div>-->
+   <section class="home" id="home">
+      <div class="content">
+          <h1>Welcome to TopRecipe</h1>
+          <h3>Different Spices for Different Tastes 😋</h3>
+          <p>TopRecipe aims to provide you with a diverse range of exceptional flavors, making your culinary journey a
+              delightful experience. Explore a world of recipes that cater to every palate and culinary curiosity. Whether
+              you're a seasoned chef or a novice cook, our platform offers the perfect recipe for every occasion.</p>
+      </div>
+      <div class="image">
+        <img src="{{ url_for('static', filename='img/Noodles-PNG-Image.png')}}" alt="" class="home-img">
+        <img src="{{ url_for('static', filename='img/home-parallax-img2.png')}}" alt="" class="home-parallax-img">
+      </div>
+   </section>
+
+   <div class="underline"></div>
+   {% include "recipe/recipeList.html" %}
+   <div class="list">
+       {% block list %}{% endblock %}
+   </div>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 TopRecipe. All rights reserved.</p>
+            <!-- Add more footer content as needed -->
+        </div>
+    </footer>
+</body>
+</html>

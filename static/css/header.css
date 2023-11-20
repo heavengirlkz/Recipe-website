@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin: 0;
+   padding: 0;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration-line: none;
+   -webkit-transition: .2s linear;
+   transition: .2s linear;
+}
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
+  -webkit-box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 1.5rem 9%;
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  color: #E21818;
+}
+
+.header .logo i {
+  padding-right: .5rem;
+  color: #00235B;
+}
+
+.header .navbar a {
+  font-size: 1.4rem;
+  margin: 0 1rem;
+  color: #666;
+}
+
+.header .navbar a:hover {
+  color: #00235B;
+}
+
+.header .icons div {
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  background: #f7f7f7;
+  color: #00235B;
+  border-radius: .5rem;
+  margin-left: .3rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header .icons div:hover {
+  color: #fff;
+  background: #00235B;
+}
+.btn {
+  margin-top: 10px;
+  padding: 5px 5px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  background: #E64848;
+  border-radius: .5rem;
+}
+
+.btn:hover {
+  background: #130f40;
+}

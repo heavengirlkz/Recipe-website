@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+
+.page-borders {
+    margin: 0 5%;
+}
+
+.main-card {
+    box-shadow: 0 10px 20px rgba(210, 22, 22, 0.2);
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 20px 0;
+    justify-content: space-around;
+}
+
+.main-card-info {
+    display: flex;
+    justify-content: space-around;
+}
+
+.feature-card {
+    box-shadow: 0 10px 20px rgba(210, 16, 16, 0.2);
+    border-radius: 5px;
+    margin: 50px 0;
+    padding: 20px;
+}
+
+.feature-card h2 {
+    margin-bottom: 20px;
+}
+
+
+.for-image img{
+    border-radius: 1rem;
+    border: 5px solid #eaeaea;
+    height:auto;
+    width:40vw;
+}
+
+.for-main-info {
+    margin-top: 20px;
+    width: 40%;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, p {
+    margin: 5px;
+}
+
+p {
+    font-weight: bold;
+}
+
+h3 {
+    color: #212121;
+}
+
+.underline {
+    margin: 15px 5px;
+    width: 100%;
+    border: 1px solid #f55c5c;
+}
+
+.red-button {
+    width: auto;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9a3939;
+    color: white;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 25px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.quantity-input {
+    text-align: center;
+    width: 100px;
+    margin: 20px 5px 20px 5px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9a3939;
+    color: white;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.increase-btn {
+    text-align-all: justify;
+    width: 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: #9a3939;
+    color: white;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.red-button, .increase-btn:hover {
+    background-color: #d21414;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+}
+
+input {
+    border-radius: 4px;
+    border: 3px solid lightgrey;
+    padding: 10px 3px;
+    width: 300px;
+    height: 10px;
+}
+
+input::placeholder {
+    color: grey;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+textarea {
+    border-radius: 4px;
+    border: 3px solid lightgrey;
+    padding: 10px 3px;
+    width: 300px;
+    height: 50px; /* Set the desired height */
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    color: grey; /* Set the text color */
+    margin: 10px;
+}
+
+.comments-section {
+    margin: 0 5%;
+    box-shadow: 0 10px 20px rgba(210, 22, 22, 0.2);
+    border-radius: 5px;
+    padding: 20px 0;
+    justify-content: space-around;
+    display: block;
+}
+
+.comment {
+    margin: 10px;
+    padding: 8px;
+    background-color: #eaeaea;
+    border-radius: 0.5rem;
+}
+
+.edit-item{
+    display: flex;
+    justify-content: right;
+}
+
+.author {
+    color: grey;
+}
+
+.ingredients{
+    margin:10px;
+}
+
+.ingredient-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ingredient-box {
+    position: relative;
+    width: 300px;
+    text-align: center;
+}
+
+.ingredient-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.ingredient-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0 0 8px 8px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    align-items: center;
+}
+
+.comment-form .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .7rem 1rem;
+    font-size: 15px;
+    cursor: pointer;
+    color: #fff;
+    background: #E64848;
+    border-radius: .5rem;
+}
+
+.instruction-text {
+    white-space: pre-line;
+}

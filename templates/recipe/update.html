@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/recipe/create.css') }}">
+
+    <title>Update</title>
+</head>
+<body>
+<div class="input-box">
+    <form class="form" method="POST" action="{{ url_for('update_recipe', id=recipe.id) }}">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="{{ recipe.title }}" required>
+        <br>
+        <label for="image_url">Image URL:</label>
+        <input type="text" name="image_url" id="image_url" value="{{ recipe.image_url }}">
+        <br>
+        <label for="instructions">Instructions:</label>
+        <textarea name="instructions" id="instructions" required>{{ recipe.instructions }}</textarea>
+        <br>
+        <div style="padding: 10px; width: auto">
+            <div class="ingBtn">
+                <a class="link" href="{{ url_for('create_ingredient', recipe_id=recipe.id) }}">Add ingredient</a>
+            </div>
+        </div>
+        <div class="ingredient-grid">
+            {% for ingredient in ingredients %}
+                <label class="ingredient-item">
+                    <input type="checkbox" name="ingredient_ids" value="{{ ingredient.id }}"
+                            {% if ingredient in recipe.ingredients %} checked {% endif %}>
+                    <img src="{{ ingredient.image_url }}" alt="{{ ingredient.name }}">
+                    <p>{{ ingredient.title }}</p>
+                </label>
+            {% endfor %}
+        </div>
+        <button type="submit" class="submitButton">Update Recipe</button>
+    </form>
+</div>
+</body>
+</html>

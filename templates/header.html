@@ -1,0 +1,16 @@
+<header class="header">
+  <a href="{{ url_for('index') }}" class="logo"> TopRecipe </a>
+
+      <nav class="navbar">
+          {%  if not user_is_authenticated  %}
+            <a href="{{ url_for('login') }}">Log In</a>
+            <a href="{{ url_for('user_create') }}">Sign Up</a>
+          {% else %}
+           <a href="{{ url_for('user_detail') }}">Profile</a>
+           <a href="{{ url_for('logout') }}">Log Out</a>
+
+          {% endif %}
+      </nav>
+</header>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css') }}">

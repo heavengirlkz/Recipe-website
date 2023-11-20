@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/recipe/detail.css') }}">
+
+</head>
+<body>
+{% include "header.html" %}
+<div class="page-borders">
+    <div class="edit-item">
+        {% if user_is_authenticated and user_id == recipe.user_id %}
+            <a href="{{ url_for('update_recipe', id=recipe.id) }}" class="red-button">Edit</a>
+            <form method="post" action="{{ url_for('delete_recipe', id=recipe.id) }}">
+                <button type="submit" class="red-button"
+                        onclick="return confirm('Are you sure you want to delete this recipe?')">Delete
+                </button>
+            </form>
+        {% endif %}
+    </div>
+    <div class="main-card">
+        <div class="main-card-info">
+            <div class="for-image">
+                <img src="{{ recipe.image_url }}"
+                     width="500px">
+            </div>
+            <div class="for-main-info">
+                <h1>{{ recipe.title }}</h1>
+                <div class="underline"></div>
+                <h2>Instruction:</h2>
+                <div class="instruction-text">{{ recipe.instructions }}</div>
+            </div>
+        </div>
+        <div class="ingredients">
+            <h3>Ingredients:</h3>
+            <div class="ingredient-boxes">
+                {% for ingredient in ingredients %}
+                    <div class="ingredient-box">
+                        <img src="{{ ingredient.image_url }}" alt="{{ ingredient.name }}">
+                        <div class="ingredient-info">
+                            <h4>{{ ingredient.name }}</h4>
+                            <p>{{ ingredient.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-container">
+    <div class="comments-section">
+        <h3>Comments:</h3>
+        {% for comment in recipe.comments %}
+            <div class="comment">
+                <p>{{ comment.text }}</p>
+                {% if comment.user %}
+                    <p class="author">By: {{ comment.user.username }}</p>
+                {% else %}
+                    <p class="author">Anonymous User</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Add this section for adding new comments -->
+    <form class="comment-form" method="post" action="{{ url_for('add_comment', id=recipe.id) }}">
+        <label for="comment">Add a comment:</label>
+        <textarea name="comment" rows="4" cols="50"></textarea>
+        <button type="submit" class="btn">Create comment</button>
+    </form>
+
+</div>
+
+</body>
+</html>

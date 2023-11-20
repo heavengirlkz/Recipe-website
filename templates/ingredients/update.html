@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/recipe/create.css') }}">
+
+    <title>Update</title>
+</head>
+<body>
+<div class="input-box">
+    <form class="form" method="post" action="{{ url_for('update_ingredient', ingredient_id=ingredient.id) }}">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="{{ ingredient.title }}" required>
+        <br>
+        <label for="image_url">Image URL:</label>
+        <input type="text" name="image_url" id="image_url" value="{{ ingredient.image_url }}">
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description" id="description" required>{{ ingredient.description }}</textarea>
+        <br>
+        <button class="submitButton"  type="submit">Update Ingredient</button>
+    </form>
+</div>
+</body>
+</html>

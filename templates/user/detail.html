@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Detail</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/user/detail.css') }}">
+
+</head>
+<body>
+{% include "header.html" %}
+
+<a href="{{ url_for('index') }}" class="btn btn-primary">Back to Main Page</a>
+<div class="page-borders">
+    {% if 'user_id' in session %}
+    <div class="profile-card">
+        <h1>User Detail</h1>
+        <p><strong>User ID:</strong> {{ user.id }}</p>
+        <p><strong>Username:</strong> {{ user.username }}</p>
+        <div class="user-recipe">
+            <h2>User's Recipes:</h2>
+            {% for recipe in recipes %}
+            <div class="recipe">
+                <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}">
+                <div class="recipe-details">
+                    <h3>{{ recipe.title }}</h3>
+                    <a href="{{ url_for('detail_recipe', id=recipe.id) }}">See details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    {% endif %}
+</div>
+<!-- Add more user details as needed -->
+{# <a href="{{ url_for('user_edit', id=user.id) }}">Edit User</a>#}
+{# <a href="{{ url_for('user_delete', id=user.id) }}">Delete User</a>#}
+</body>
+</html>

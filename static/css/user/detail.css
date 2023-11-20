@@ -1,0 +1,37 @@
+*{
+  font-family: Arial;
+}
+.page-borders{
+  margin: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-card{
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 20px;
+  width: 80%;
+  min-width: 200px;
+}
+.profile-card div{
+  margin: 5px;
+}
+
+.user-recipe{
+  margin: 5px;
+}
+.user-recipe h2{
+  color: #e55c5c;
+}
+.recipe{
+  width:fit-content;
+  background-color: lightgrey;
+  border: 1px solid #c5c5c5;
+  border-radius: 1rem;
+}
+.recipe img{
+  width: 200px;
+  border-radius: 1rem;
+}
